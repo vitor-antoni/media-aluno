@@ -32,6 +32,9 @@ for num, c in enumerate(turma):
     print(f'  {num}    |  {c[0]}')
 for c in turma:
     escolha = int(input('Qual pessoa você deseja saber a média? '))     # Utilizar NOT IN TURMA
+    while escolha > len(turma):
+        escolha = int(input(f'''{cores["vermelho"]}Pessoa inválida, tente novamente!{cores["limpar"]}
+Qual pessoa você deseja saber a média? '''))
     media = (turma[escolha][1] + turma[escolha][2]) / 2     
     print(f'A média de {turma[escolha][0]} é {media}')     # Turma == lista / Escoha == sublista / 0 == nome
     if media < 6:
